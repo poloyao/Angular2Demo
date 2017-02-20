@@ -1,0 +1,40 @@
+﻿<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name}} details!</h2>
+    <div><label>id: </label>{{selectedHero.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedHero.name" placeholder="name" />
+    </div>
+</div>
+
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+
+
+
+{{diagnostic}}
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <div>
+        <label>id: </label>
+        <input [(ngModel)]="hero.id" placeholder="id" [ngModelOptions]="{standalone: true}" />
+        <label>name: </label>
+        <input [(ngModel)]="hero.name" placeholder="name" [ngModelOptions]="{standalone: true}"/>
+        <button type="submit" >提交</button>
+    </div>
+</form>
+
+<div>
+    <div>
+        <label>{{hero.id}}</label>
+    </div>
+     <label>{{hero.name}}</label>
+</div>
+
+
