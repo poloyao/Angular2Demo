@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import { Moment } from 'angular2-moment';
 
 @Component({
     selector: "my-app",
@@ -58,7 +59,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
     heroes = HEROES;
     selectedHero: Hero;
-    title = 'tour of heroes';
+    //title = 'tour of heroes';
+    //title = Moment().format();
+    //title = 
     hero = new Hero();
     submitted = false;
     onSelect(hero: Hero): void {
@@ -75,7 +78,8 @@ export class AppComponent {
 
 export class Hero {
    id : number;
-   name:string;
+   name: string;
+   //upd; string;
     // constructor(
     //    public id: number,
     //    public name: string,
